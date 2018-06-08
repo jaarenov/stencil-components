@@ -58,6 +58,39 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface OuterBox {
+
+    }
+  }
+
+  interface HTMLOuterBoxElement extends StencilComponents.OuterBox, HTMLStencilElement {}
+
+  var HTMLOuterBoxElement: {
+    prototype: HTMLOuterBoxElement;
+    new (): HTMLOuterBoxElement;
+  };
+  interface HTMLElementTagNameMap {
+    'outer-box': HTMLOuterBoxElement;
+  }
+  interface ElementTagNameMap {
+    'outer-box': HTMLOuterBoxElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'outer-box': JSXElements.OuterBoxAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface OuterBoxAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
 
 export declare function defineCustomElements(window: any): void;
