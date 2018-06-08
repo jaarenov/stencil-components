@@ -1,3 +1,4 @@
+// const stencil = require('@stencil/webpack');
 const sass = require('@stencil/sass');
 
 exports.config = {
