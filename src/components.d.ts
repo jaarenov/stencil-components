@@ -27,6 +27,72 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface Backdrop {
+
+    }
+  }
+
+  interface HTMLBackdropElement extends StencilComponents.Backdrop, HTMLStencilElement {}
+
+  var HTMLBackdropElement: {
+    prototype: HTMLBackdropElement;
+    new (): HTMLBackdropElement;
+  };
+  interface HTMLElementTagNameMap {
+    'backdrop': HTMLBackdropElement;
+  }
+  interface ElementTagNameMap {
+    'backdrop': HTMLBackdropElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'backdrop': JSXElements.BackdropAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BackdropAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface Modal {
+
+    }
+  }
+
+  interface HTMLModalElement extends StencilComponents.Modal, HTMLStencilElement {}
+
+  var HTMLModalElement: {
+    prototype: HTMLModalElement;
+    new (): HTMLModalElement;
+  };
+  interface HTMLElementTagNameMap {
+    'modal': HTMLModalElement;
+  }
+  interface ElementTagNameMap {
+    'modal': HTMLModalElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'modal': JSXElements.ModalAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ModalAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface MyComponent {
       'first': string;
       'last': string;
@@ -54,39 +120,6 @@ declare global {
     export interface MyComponentAttributes extends HTMLAttributes {
       'first'?: string;
       'last'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface OuterBox {
-
-    }
-  }
-
-  interface HTMLOuterBoxElement extends StencilComponents.OuterBox, HTMLStencilElement {}
-
-  var HTMLOuterBoxElement: {
-    prototype: HTMLOuterBoxElement;
-    new (): HTMLOuterBoxElement;
-  };
-  interface HTMLElementTagNameMap {
-    'outer-box': HTMLOuterBoxElement;
-  }
-  interface ElementTagNameMap {
-    'outer-box': HTMLOuterBoxElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'outer-box': JSXElements.OuterBoxAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface OuterBoxAttributes extends HTMLAttributes {
-
     }
   }
 }

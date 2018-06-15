@@ -1,15 +1,15 @@
 import { Component } from '@stencil/core';
 
 @Component({
-  tag: 'outer-box',
-  styleUrl: 'outer-box.scss'
-  // shadow: true
+  tag: 'modal',
+  styleUrl: 'modal.scss',
+  scoped: true
 })
-export class OuterBox {
+export class MyModal {
 
   render() {
     return (
-      <div>
+      <div class="my-modal">
         Hello, World! I'm the man
       </div>
     );
