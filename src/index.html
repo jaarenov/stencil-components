@@ -5,12 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/mycomponent.js"></script>
-
+  <style>body{background: #303;}</style>
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  <outer-box></outer-box>
+  <button>Open modal</button>
+  <ui-modal title="Some title" content="This is an information"></ui-modal>
+  <ui-backdrop></ui-background>
 
+  <script>
+    var btn = document.querySelector('button');
+    var uiModal = document.querySelector('ui-modal');    
+
+    btn.addEventListener ('click', function() {
+      uiModal.open();
+    });
+
+  </script>
 </body>
 </html>

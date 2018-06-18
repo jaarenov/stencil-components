@@ -2,8 +2,8 @@ import { Component } from '@stencil/core';
 
 @Component({
   tag: 'outer-box',
-  styleUrl: 'outer-box.scss'
-  // shadow: true
+  styleUrl: 'outer-box.scss',
+  shadow: true
 })
 export class OuterBox {
 

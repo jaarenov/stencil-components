@@ -62,6 +62,42 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface UiModal {
+      'content': string;
+      'open': () => void;
+      'title': string;
+    }
+  }
+
+  interface HTMLUiModalElement extends StencilComponents.UiModal, HTMLStencilElement {}
+
+  var HTMLUiModalElement: {
+    prototype: HTMLUiModalElement;
+    new (): HTMLUiModalElement;
+  };
+  interface HTMLElementTagNameMap {
+    'ui-modal': HTMLUiModalElement;
+  }
+  interface ElementTagNameMap {
+    'ui-modal': HTMLUiModalElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'ui-modal': JSXElements.UiModalAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UiModalAttributes extends HTMLAttributes {
+      'content'?: string;
+      'title'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface OuterBox {
 
     }
@@ -86,6 +122,39 @@ declare global {
   }
   namespace JSXElements {
     export interface OuterBoxAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface UiBackdrop {
+
+    }
+  }
+
+  interface HTMLUiBackdropElement extends StencilComponents.UiBackdrop, HTMLStencilElement {}
+
+  var HTMLUiBackdropElement: {
+    prototype: HTMLUiBackdropElement;
+    new (): HTMLUiBackdropElement;
+  };
+  interface HTMLElementTagNameMap {
+    'ui-backdrop': HTMLUiBackdropElement;
+  }
+  interface ElementTagNameMap {
+    'ui-backdrop': HTMLUiBackdropElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'ui-backdrop': JSXElements.UiBackdropAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface UiBackdropAttributes extends HTMLAttributes {
 
     }
   }

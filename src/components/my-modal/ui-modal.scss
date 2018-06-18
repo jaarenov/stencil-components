@@ -1,0 +1,25 @@
+:host {
+  display: none;
+
+  .ui-modal {
+    position: fixed;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ccc;
+
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: #c0c;
+    }
+  }
+
+}

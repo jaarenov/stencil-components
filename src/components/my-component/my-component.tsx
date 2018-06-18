@@ -14,6 +14,10 @@ export class MyComponent {
     return (
       <div>
         Hello, World! I'm {this.first} {this.last}
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quas ipsa, at voluptatum non quod corrupti assumenda omnis repellat minima. Molestias doloribus ea exercitationem ab incidunt, quas sint excepturi, ad impedit quae aliquid assumenda blanditiis deserunt enim, harum dicta eligendi!
+        </p>
       </div>
     );
   }
