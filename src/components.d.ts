@@ -63,9 +63,9 @@ declare global {
 
   namespace StencilComponents {
     interface UiModal {
-      'content': string;
       'open': () => void;
-      'title': string;
+      'size': string;
+      'theme': string;
     }
   }
 
@@ -88,8 +88,8 @@ declare global {
   }
   namespace JSXElements {
     export interface UiModalAttributes extends HTMLAttributes {
-      'content'?: string;
-      'title'?: string;
+      'size'?: string;
+      'theme'?: string;
     }
   }
 }

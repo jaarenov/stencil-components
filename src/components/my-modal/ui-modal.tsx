@@ -10,8 +10,8 @@ export class UiModal {
 
   @Element() modalEl: HTMLElement; 
 
-  @Prop() title: string;
-  @Prop() content: string;
+  @Prop() size: string;
+  @Prop() theme: string;
 
   @State() showOptions = false;
 
@@ -40,11 +40,18 @@ export class UiModal {
     }
 
     return (
-      <div class="ui-modal">
-        <h3>{this.title}</h3>
-        <p>{this.content}</p>
+      <div class={
+        ('modal') + ' ' +
+        (this.size) + ' ' +
+        (this.theme)
+      }>
 
-        <button onClick={this.showOptionsHandler.bind(this)}>Show options</button>
+        <div class="modal-header"></div>
+
+        <div class="modal-body"></div>
+        <button class="close">&#10006;</button>
+        
+        {/* <button onClick={this.showOptionsHandler.bind(this)}>Show options</button> */}
 
         {options}
       </div>

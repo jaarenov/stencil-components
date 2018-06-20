@@ -1,25 +1,84 @@
-:host {
-  display: none;
+@import '../common/m_common';
 
-  .ui-modal {
+:host {
+  display: block;
+
+  .modal {
     position: fixed;
     z-index: 20;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 300px;
-    padding: 20px;
+    height: 246px;
+    margin: 20px;
+    box-shadow: 11px 11px 70px 0 rgba(0,0,0,.2);
     border-radius: 10px;
-    background: #ccc;
+    overflow: hidden;
+
+    &.primary-dark {
+      background: $woodsmoke;
+
+      .modal-header {
+        background: $shark;
+      }
+    }
+
+    &.primary-bright {
+      background: $white;
+
+      .modal-header {
+        background: $gull-gray;
+      }
+
+      .close {
+        color: $woodsmoke;
+      }
+    }
+
+    &.secondary-dark {
+      background: $woodsmoke;
+    }
+
+    &.secondary-bright {
+      background: $white;
+
+      .close {
+        color: $woodsmoke;
+      }
+    }
+    
+
+    .modal-header {
+      height: 48px;
+      padding: 0 20px;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
 
     button {
       background: none;
       border: none;
       outline: none;
       cursor: pointer;
-      color: #c0c;
+      color: #fff;
+    }
+
+    &.xlg {
+      width: 720px;
+    }
+
+    &.lg {
+      width: 640px;
+    }
+   
+ 
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
     }
   }
-
 }
