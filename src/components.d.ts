@@ -64,6 +64,7 @@ declare global {
   namespace StencilComponents {
     interface UiModal {
       'open': () => void;
+      'showBackdrop': true;
       'size': string;
       'theme': string;
     }
@@ -88,6 +89,7 @@ declare global {
   }
   namespace JSXElements {
     export interface UiModalAttributes extends HTMLAttributes {
+      'showBackdrop'?: true;
       'size'?: string;
       'theme'?: string;
     }
@@ -132,7 +134,7 @@ declare global {
 
   namespace StencilComponents {
     interface UiBackdrop {
-
+      'visible': true;
     }
   }
 
@@ -155,7 +157,7 @@ declare global {
   }
   namespace JSXElements {
     export interface UiBackdropAttributes extends HTMLAttributes {
-
+      'visible'?: true;
     }
   }
 }

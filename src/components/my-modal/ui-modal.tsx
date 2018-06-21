@@ -1,4 +1,4 @@
-import { Component, Method, Element, Prop, State } from '@stencil/core';
+import { Component, Method, Element, Prop } from '@stencil/core';
 
 @Component({
   tag: 'ui-modal',
@@ -6,38 +6,34 @@ import { Component, Method, Element, Prop, State } from '@stencil/core';
   shadow: true
 })
 export class UiModal {
-  buttons = ['Okay', 'Cancel'];
-
   @Element() modalEl: HTMLElement; 
 
   @Prop() size: string;
   @Prop() theme: string;
-
-  @State() showOptions = false;
+  @Prop({ mutable: true }) showBackdrop: true;
 
   @Method()
   open() {
     this.modalEl.style.display = 'block';
   }
 
-  showOptionsHandler() {
-    this.showOptions = true;
-  } 
-
   closeModalHandler () {
     this.modalEl.style.display = 'none';
-    this.showOptions = false;
+    // this.showBackdrop = false;
   }
 
-  render() {
-    let options = null;
-    if (this.showOptions) {
-      options = (
-        this.buttons.map(btn => (
-          <button onClick={this.closeModalHandler.bind(this)}>{btn}</button>
-        ))
-      );
+  
+  hostData() {
+    return {
+      showBackdrop: true
     }
+  }
+
+  render() {    
+    let uiBackdrop = document.querySelector('ui-backdrop');
+    const showBackdrop = true ? uiBackdrop.classList.add('backdrop-hide') : 'false';
+
+    <ui-backdrop></ui-backdrop>
 
     return (
       <div class={
@@ -46,14 +42,10 @@ export class UiModal {
         (this.theme)
       }>
 
-        <div class="modal-header"></div>
+      <div class="modal-header"></div>
+      <div class="modal-body"></div>
+      <button class="close" onClick={this.closeModalHandler.bind(this)}>&#10006;</button>
 
-        <div class="modal-body"></div>
-        <button class="close">&#10006;</button>
-        
-        {/* <button onClick={this.showOptionsHandler.bind(this)}>Show options</button> */}
-
-        {options}
       </div>
     );
   }
