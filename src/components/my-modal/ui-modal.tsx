@@ -10,7 +10,7 @@ export class UiModal {
 
   @Prop() size: string;
   @Prop() theme: string;
-  @Prop({ mutable: true }) showBackdrop: true;
+  @Prop() backdrop: boolean = true;
 
   @Method()
   open() {
@@ -19,34 +19,25 @@ export class UiModal {
 
   closeModalHandler () {
     this.modalEl.style.display = 'none';
-    // this.showBackdrop = false;
   }
 
   
-  hostData() {
-    return {
-      showBackdrop: true
-    }
-  }
-
   render() {    
-    let uiBackdrop = document.querySelector('ui-backdrop');
-    const showBackdrop = true ? uiBackdrop.classList.add('backdrop-hide') : 'false';
-
-    <ui-backdrop></ui-backdrop>
-
-    return (
+    
+    return [
+      <ui-backdrop visible={this.backdrop}></ui-backdrop>,
       <div class={
         ('modal') + ' ' +
         (this.size) + ' ' +
         (this.theme)
       }>
-
-      <div class="modal-header"></div>
-      <div class="modal-body"></div>
-      <button class="close" onClick={this.closeModalHandler.bind(this)}>&#10006;</button>
-
+        <div class="modal-header"></div>
+        <div class="modal-body"></div>
+        <button class="close" onClick={this.closeModalHandler.bind(this)}>&#10006;</button>
       </div>
-    );
+    ];
+ 
+
+    
   }
 }
