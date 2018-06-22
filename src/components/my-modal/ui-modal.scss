@@ -17,9 +17,11 @@
 
     &.primary-dark {
       background: $woodsmoke;
+      color: $white;
 
       .modal-header {
         background: $shark;
+        color: $white;
       }
     }
 
@@ -37,6 +39,7 @@
 
     &.secondary-dark {
       background: $woodsmoke;
+      color: $white;
     }
 
     &.secondary-bright {
@@ -49,8 +52,7 @@
     
 
     .modal-header {
-      height: 48px;
-      padding: 0 20px;
+      padding: 20px 20px;
     }
 
     .modal-body {

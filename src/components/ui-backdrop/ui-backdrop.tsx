@@ -6,7 +6,6 @@ import { Component, Prop } from '@stencil/core';
   shadow: true
 })
 
-
 export class UiBackdrop {
   @Prop() visible: boolean;
 

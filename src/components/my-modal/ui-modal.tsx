@@ -5,12 +5,13 @@ import { Component, Method, Element, Prop } from '@stencil/core';
   styleUrl: 'ui-modal.scss',
   shadow: true
 })
+
 export class UiModal {
   @Element() modalEl: HTMLElement; 
 
   @Prop() size: string;
   @Prop() theme: string;
-  @Prop() backdrop: boolean = true;
+  @Prop() backdrop: boolean;
 
   @Method()
   open() {
@@ -21,9 +22,7 @@ export class UiModal {
     this.modalEl.style.display = 'none';
   }
 
-  
   render() {    
-    
     return [
       <ui-backdrop visible={this.backdrop}></ui-backdrop>,
       <div class={
@@ -31,13 +30,14 @@ export class UiModal {
         (this.size) + ' ' +
         (this.theme)
       }>
-        <div class="modal-header"></div>
-        <div class="modal-body"></div>
+        <div class="modal-header">
+          <slot name="modal-header" />
+        </div>
+        <div class="modal-body">
+          <slot name="modal-content" />
+        </div>
         <button class="close" onClick={this.closeModalHandler.bind(this)}>&#10006;</button>
       </div>
     ];
- 
-
-    
   }
 }
