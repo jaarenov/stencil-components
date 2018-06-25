@@ -1,4 +1,5 @@
 const sass = require('@stencil/sass');
+const postcss = require('@stencil/postcss');
 
 exports.config = {
   namespace: 'mycomponent',
