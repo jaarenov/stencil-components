@@ -42,7 +42,7 @@
       color: $white;
     }
 
-    &.secondary-bright {
+    &.secondary-light {
       background: $white;
 
       .close {
@@ -52,19 +52,31 @@
     
 
     .modal-header {
-      padding: 20px 20px;
+      position: relative;
+      padding: 13px 20px;
+      text-transform: uppercase; 
+      
+      ::slotted([slot="modal-header"]){
+        font-size: 12px;
+        font-weight: 100;
+      }
     }
 
     .modal-body {
       padding: 24px;
+
+      ::slotted([slot="modal-content"]){
+        font-size: 14px;
+        font-weight: 100;
+      }
     }
 
     button {
       background: none;
       border: none;
       outline: none;
-      cursor: pointer;
       color: #fff;
+      cursor: pointer;
     }
 
     &.xlg {
@@ -75,11 +87,18 @@
       width: 640px;
     }
    
- 
+    &.md {
+      width: 560px;
+    }
+
+    &.sm {
+      width: 400px;
+    }
 
     .close {
       position: absolute;
-      top: 10px;
+      top: 50%;
+      transform: translateY(-50%);
       right: 10px;
     }
   }

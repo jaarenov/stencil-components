@@ -31,12 +31,12 @@ export class UiModal {
         (this.theme)
       }>
         <div class="modal-header">
+          <button class="close" onClick={this.closeModalHandler.bind(this)}>&#10005;</button>
           <slot name="modal-header" />
         </div>
         <div class="modal-body">
           <slot name="modal-content" />
         </div>
-        <button class="close" onClick={this.closeModalHandler.bind(this)}>&#10006;</button>
       </div>
     ];
   }
